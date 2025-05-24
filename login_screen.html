@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aswan Club</title>
+	<link rel="stylesheet" type="text/css" href="club.css">
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="main">
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+		<div class="signup">
+			<form>
+				<label for="chk" aria-hidden="true">Aswan club</label>
+			</form>
+		</div>
+
+		<div class="login">
+			<form action="login_admin.php" method="POST">
+				<label for="chk" aria-hidden="true">Login</label>
+				<input type="text" name="name" placeholder="Name" required="">
+				<input type="password" name="password" placeholder="Password" required="">
+				<select name="role" required onchange="setRole(this)">
+					<option value="member">Member</option>
+					<option value="admin">Admin</option>
+				</select>
+				<button type="submit">Login</button>
+			</form>
+		</div>
+	</div>
+
+	<script>
+		// Function to handle setting the role dynamically based on selection
+		function setRole(select) {
+			if (select.value === 'admin') {
+				document.getElementById('role').value = 'admin';
+			} else {
+				document.getElementById('role').value = 'member';
+			}
+		}
+	</script>
+</body>
+</html>
